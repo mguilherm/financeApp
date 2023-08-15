@@ -4,6 +4,7 @@ import Movements from '../../components/Movements';
 import Actions from '../../components/Actions';
 
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import DateComparison from '../../components/Date';
 
 const list = [
   {
@@ -34,7 +35,9 @@ export default function Home() {
     <View style={styles.container}>
       <Header name={'Marcos Silva'}/>
       <Balance expenses={'-300,90'} received={'2.950,00'}/>
+
       <Text style={styles.title}>Últimas movimentações</Text>
+      <DateComparison/>
       <Actions/>
       <FlatList 
         data={list}  
@@ -61,5 +64,6 @@ const styles = StyleSheet.create({
   list:{
     marginStart: 14,
     marginEnd: 14,
-  }
+  },
+
 });
