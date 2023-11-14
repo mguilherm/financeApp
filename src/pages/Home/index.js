@@ -30,6 +30,10 @@ const list = [
   },
 ]
 
+const content = {
+  date: '2022-01-9T21:13:25.763Z',
+} ;
+
 export default function Home() {
   return (
     <View style={styles.container}>
@@ -37,7 +41,7 @@ export default function Home() {
       <Balance expenses={'-300,90'} received={'2.950,00'}/>
 
       <Text style={styles.title}>Últimas movimentações</Text>
-      <DateComparison/>
+      <DateComparison date={content.date}/>
       <Actions/>
       <FlatList 
         data={list}  

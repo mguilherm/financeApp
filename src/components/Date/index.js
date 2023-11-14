@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-const content = {
-  date: '2022-01-9T21:13:25.763Z',
-} ;
-
-const DateComparison = () => {
+const DateComparison = ({date}) => {
   const [timeDifference, setTimeDifference] = useState('');
  
   useEffect(() => {
     const currentDate = new Date();
-    const contentDate = new Date(content.date);
+    const contentDate = new Date(date);
 
     const timeDiffInMilliseconds = currentDate - contentDate;
     const seconds = Math.floor(timeDiffInMilliseconds / 1000);
@@ -41,7 +37,7 @@ const DateComparison = () => {
     }
 
     setTimeDifference(differenceText);
-  }, [content.date]);
+  }, [date]);
 
   return (
     <View>
